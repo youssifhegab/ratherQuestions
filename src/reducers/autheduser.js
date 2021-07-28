@@ -1,10 +1,10 @@
-import { AUTHED_ID, UNSET_AUTHED_ID } from '../actions/autheduser'
+import { SET_AUTHED_ID, RESET_AUTHED_ID } from '../actions/autheduser'
 
 export default function authedUser (state = null, action) {
   switch(action.type) {
-    case AUTHED_ID : 
+    case SET_AUTHED_ID : 
       return action.id
-    case UNSET_AUTHED_ID :
+    case RESET_AUTHED_ID :
       return null;
     default : 
       return state

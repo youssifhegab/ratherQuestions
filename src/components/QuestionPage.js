@@ -47,9 +47,9 @@ class QuestionPage extends Component {
         <h2 className='center'> Would You Rather ? </h2>
         <div className='question'>
           <img
-            src={require(`../utils/avatars/${avatarURL}`)}
+            src={avatarURL}
             alt={`Avatar of ${author}`}
-            className='avatar-details'
+            className='avatar'
           />
           <div>
             <div className='question-info'>

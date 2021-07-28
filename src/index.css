@@ -2,10 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: #e7e5dc;
-  background-color: rgb(243, 194, 119);
+  color: #252525;
 }
 
+a {
+  text-decoration: none;
+  color: #252525;
+}
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -27,13 +30,15 @@ body {
 
 .btn {
   text-transform: uppercase;
-  margin: 10px;
-  padding: 5px;
-  border: 2px solid rgba(0,0,0,.29);
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
   cursor: pointer;
   background: #fff;
-  font-size: 11px;
+  font-size: 16px;
+  width: 250px;
   position: relative;
+  color: black;
 }
 
 .btn:hover {
@@ -103,4 +108,78 @@ body {
   margin-top: 10px;
   font-size: 20px;
   color: #C3392A;
+}
+
+.nav {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(235,235,235,1);
+}
+
+.nav ul {
+  margin: 0 auto;
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li {
+  width: 100%;
+  max-width: 125px;
+  padding: 20px 5px 20px 5px;
+  text-align: center;
+}
+
+.nav li.user-details {
+  margin-left: auto;
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-user-avatar {
+  height: 35px;
+  border-radius: 25px;
+  margin: 0px;
+  margin-right: 10px;
+}
+
+.nav hr {
+  margin: 0px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 20px 0px;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.avatar {
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
 }

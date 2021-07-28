@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { handleInitialData } from '../actions/shared'
+import { handleInitialData } from './actions/shared'
 import LoadingBar from 'react-redux-loading'
-import Dashboard from './Dashboard'
-import QuestionPage from './QuestionPage'
-import NewQuestion from './NewQuestion'
-import LeaderBoard from './LeaderBoard'
-import Login from './Login'
-import Nav from './Nav'
+import Dashboard from '../src/components/Dashboard'
+import QuestionPage from '../src/components/QuestionPage'
+import NewQuestion from '../src/components/NewQuestion'
+import LeaderBoard from '../src/components/LeaderBoard'
+import Login from '../src/components/Login'
+import Nav from '../src/components/Nav'
 
 class App extends Component {
   componentDidMount() {

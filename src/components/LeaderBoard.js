@@ -24,7 +24,7 @@ class LeaderBoard extends Component {
               <td>
                 <div className = 'row'>        
                   <img
-                    src={require(`../utils/avatars/${avatarURL}`)}
+                    src={avatarURL}
                     alt={`Avatar of ${id}`}
                     className='avatar'
                   />

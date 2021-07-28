@@ -1,17 +1,17 @@
-export const AUTHED_ID = 'AUTHED_ID'
-export const UNSET_AUTHED_ID = 'UNSET_AUTHED_ID'
+export const SET_AUTHED_ID = 'SET_AUTHED_ID'
+export const RESET_AUTHED_ID = 'RESET_AUTHED_ID'
 
 
-export const AuthedUser =  (id)=> {
+export const setAuthedUser =  (id)=> {
   return {
-    type: AUTHED_ID,
+    type: SET_AUTHED_ID,
     id,
   }
 }
 
-export const unSetAuthedUser = (id)=> {
+export const reSetAuthedUser = (id)=> {
   return {
-    type: UNSET_AUTHED_ID,
+    type: RESET_AUTHED_ID,
     id,
   }
 }

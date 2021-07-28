@@ -11,15 +11,15 @@ class Question extends Component {
     return (
       <Link to={`/question/${id}`} className='question'>
         <img
-          src={require(`../utils/avatars/${avatarURL}`)}
+          src={avatarURL}
           alt={`Avatar of ${author}`}
           className='avatar'
         />
         <div className='question-info'>
           <div>
-            <span>{`${name} asks :`}</span>
+            <span>{`${name} asks : `}</span>
             <div>{formatDate(timestamp)}</div>
-            {answer !== null ? <p>{`You prefers: ${answer}`}</p> : <p>Click to answer</p>}
+            {answer !== null ? <p>{`You prefer: ${answer}`}</p> : <p>Click to answer</p>}
           </div>
         </div>
       </Link>

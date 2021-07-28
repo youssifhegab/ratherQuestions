@@ -26,7 +26,6 @@ class Login extends Component {
     }))
   }
   render () {
-    console.log('ici', this.state.toHome)
     if (this.state.toHome === true) {
       return <Redirect to='/dashboard'/>
     }
