@@ -1,6 +1,6 @@
-import { getInitialData, saveQuestionAnswer, saveQuestion} from '../utils/api'
-import { receiveUsers, addResponseUser, saveUserQuestion } from './users'
-import { receiveQuestions, addResponse, addQuestion } from './questions'
+import { getInitialData, saveQuestionAnswer} from '../utils/api'
+import { receiveUsers, addResponseUser } from './users'
+import { receiveQuestions, addResponse, handleAddNewQuestion } from './questions'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 
@@ -34,18 +34,16 @@ export const handleResponse = (info)=> {
 }
 
 
-export const handleAddQuestion = (question)=> {
-  return (dispatch) => {
+export function handleAddQuestion(optionOneText, optionTwoText, author) {
+	return (dispatch) => {
 
-    dispatch(addQuestion(question))
-    dispatch(saveUserQuestion(question))
+		dispatch(showLoading())
 
-    return saveQuestion(question)
-      .catch((e) => {
-        console.warn('Error in addQuestion:', e)
-        dispatch(addQuestion(question))
-        dispatch(saveUserQuestion(question))
-        alert('The was an error uploading the question, please try again.')
-      })
-  }
+		return dispatch(handleAddNewQuestion(optionOneText, optionTwoText, author))
+			.then((question) => {
+					// dispatch(addQuestion(author, question.question.id))
+					dispatch(hideLoading())
+				}
+			)
+	}
 }

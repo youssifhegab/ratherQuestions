@@ -19,10 +19,12 @@ export const addResponseUser = ({authedUser, qid, answer})=> {
   }
   }
 
-export const saveUserQuestion = ({author, id})=> {
-  return {
-    type: SAVE_USER_QUESTION,
-    id,
-    author,
-  }
+// Add Question Action Creator
+export function addQuestion(loginUser, qid) {
+	return {
+		type: SAVE_USER_QUESTION,
+		loginUser,
+		qid
+	}
 }
+

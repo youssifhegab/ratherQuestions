@@ -1,3 +1,5 @@
+import { saveQuestion} from '../utils/api'
+
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_RESPONSE = 'ADD_RESPONSE'
 export const ADD_QUESTION = 'ADD_QUESTION'
@@ -23,4 +25,15 @@ export const addQuestion = (question)=> {
     type: ADD_QUESTION,
     question,
   }
+}
+
+// Add New Question Async Action Creator Function (uses the Thunk middleware)
+export function handleAddNewQuestion(optionOneText, optionTwoText, author) {
+	return (dispatch) => {
+		
+
+		return saveQuestion({ optionOneText, optionTwoText, author})
+				.then((question) => dispatch(addQuestion(question)))
+				
+	}
 }

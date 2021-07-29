@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'reactstrap'
-import { formatQuestion } from '../utils/_DATA'
 import { handleAddQuestion } from '../actions/shared'
 import { Redirect } from 'react-router-dom'
 
@@ -27,11 +26,16 @@ class NewQuestion extends Component {
     e.preventDefault()
     const { optionOne, optionTwo } = this.state
     const { dispatch, authedUser} = this.props
-    const question = formatQuestion({ optionOneText : optionOne, optionTwoText : optionTwo, author : authedUser})
-    dispatch(handleAddQuestion(question))
-    this.setState(() => ({
-      toHome : true,
-    }))
+    // const question = { optionOneText : optionOne, optionTwoText : optionTwo, author : authedUser}
+    dispatch(handleAddQuestion(optionOne, optionTwo, authedUser))
+		.then(() => 
+			// Is there something that should be checked for setting toHome?
+			this.setState({
+				optionOne: '',
+				optionTwo: '',
+				toHome: true
+			})
+		)
   }
   render() {
     const { optionOne, optionTwo, toHome } = this.state
